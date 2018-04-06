@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var getAvailTrips = require('./routes/getAvailTrips.js');
+var getmybookings = require('./routes/getmybookings.js');
 var savebooking = require('./routes/savebooking');
 const bodyParser = require('body-parser');
 
@@ -44,41 +45,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-// app.use('/api/trips/:source/:destination', getAvailTrips);
-// app.get('/api/trips/', getAvailTrips);
+app.use('/api/trips', getAvailTrips)
 
-app.use('/', getAvailTrips)
-
-// app.use('/api/trips/:source/:destination', getAvailTrips)
-// .get((req, res) => {
-//   const trips = [
-//     {
-//         'source': 1,
-//         'destination': 5,
-//         'from_time': '6:00:00',
-//         'to_time': '7:00:00',
-//         'bus_id': 'bus01',
-//         'price': 5
-//     },
-//     {
-//         'source': 1,
-//         'destination': 5,
-//         'from_time': '8:00:00',
-//         'to_time': '9:00:00',
-//         'bus_id': 'bus21',
-//         'price': 5
-//     }];
-
-//   const source = parseInt(req.params['source']);
-//   const destination = parseInt(req.params['destination']);
-
-//   const trip = trips.filter(data => {
-//     return (data.source === source && data.destination === destination);
-//   });
-//   res.status(200).json(
-//     trip
-//   );
-// });
+app.use('/api/getmybookings', getmybookings)
 
 app.use('/api/savebooking', savebooking);
 

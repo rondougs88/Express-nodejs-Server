@@ -15,4 +15,5 @@ var schema = new Schema({
     to_time: {type: String, required: true}
 });
 
-module.exports = mongoose.model('BookedTrip', schema);
+module.exports = mongoose.model('BookedTrip', schema, 'bookedtrips');
+// module.exports = mongoose.model('BookedTrip', schema);
