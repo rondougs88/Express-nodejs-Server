@@ -16,4 +16,3 @@ var schema = new Schema({
 });
 
 module.exports = mongoose.model('BookedTrip', schema, 'bookedtrips');
-// module.exports = mongoose.model('BookedTrip', schema);

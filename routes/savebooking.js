@@ -4,11 +4,6 @@ var BookedTrip = require('../models/bookedTrip');
 
 router.post('/', function (req, res, next) {
 
-  // var bookedTrip = new BookedTrip({
-  //   bookingId: req.body.content,
-  //   user: user
-  // });
-
   var bookedTrip = new BookedTrip({
     bookingId: req.body.bookingId,
     bookingDate: req.body.bookingDate,

@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
+var registeruser = require('./routes/registeruser.js');
 var getAvailTrips = require('./routes/getAvailTrips.js');
 var getmybookings = require('./routes/getmybookings.js');
 var savebooking = require('./routes/savebooking');
@@ -44,6 +45,8 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+app.use('/api/registeruser', registeruser)
 
 app.use('/api/trips', getAvailTrips)
 

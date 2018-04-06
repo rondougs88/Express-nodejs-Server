@@ -2,10 +2,7 @@ var express = require('express');
 var router = express.Router();
 var availabletrips = require('../models/availabletrips');
 
-// var mongoose = require('mongoose');
-
 router.get('/:source/:destination', function (req, res) {
-  // mongoose.connect('mongodb://localhost:27017/test');
 
   availabletrips.find({}, function (err, data) {
     if (err) {
