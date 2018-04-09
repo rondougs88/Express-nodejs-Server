@@ -12,7 +12,8 @@ var schema = new Schema({
     from_time: {type: String, required: true},
     price: {type: String, required: true},
     source: {type: String, required: true},
-    to_time: {type: String, required: true}
+    to_time: {type: String, required: true},
+    user: [{type: Schema.Types.ObjectId, ref: 'user'}]
 });
 
 module.exports = mongoose.model('BookedTrip', schema, 'bookedtrips');
