@@ -9,6 +9,7 @@ var user = require('./routes/user.js');
 var getAvailTrips = require('./routes/getAvailTrips.js');
 var getmybookings = require('./routes/getmybookings.js');
 var savebooking = require('./routes/savebooking');
+var updatebooking = require('./routes/updatebooking');
 const bodyParser = require('body-parser');
 
 var app = express();
@@ -53,5 +54,7 @@ app.use('/api/trips', getAvailTrips)
 app.use('/api/getmybookings', getmybookings)
 
 app.use('/api/savebooking', savebooking);
+
+app.use('/api/updatebooking/', updatebooking);
 
 module.exports = app;
